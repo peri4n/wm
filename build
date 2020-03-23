@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+stack build --verbosity error
+stack install wm:exe:wm-exe --local-bin-path bin/ --verbosity error
+mv bin/wm-exe "$1"
+
