@@ -16,10 +16,11 @@ import           XMonad.Prompt
 import           XMonad.Prompt.FuzzyMatch
 import           XMonad.Prompt.Pass
 import           XMonad.Util.Run
+import           XMonad.Util.Spotify
 
 myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@XConfig { XMonad.modMask = modMask } =
-    M.fromList
+    mediaKeys $ M.fromList
         $
     -- launching and killing programs
           [ ((modMask, xK_Return) , spawn $ XMonad.terminal conf)
@@ -52,7 +53,8 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
           , ((modMask .|. shiftMask, xK_t), raiseMaybe (runInTerm "-t task" "tasksh") (title =? "task"))
           , ((modMask .|. shiftMask, xK_o), raiseMaybe (runInTerm "-t mail" "alot") (title =? "mail"))
           , ((modMask .|. shiftMask, xK_u), raiseMaybe (runInTerm "-t music" "ncmpcpp") (title =? "music"))
-          , ((modMask .|. shiftMask, xK_s), spawn "maim -s ~/screenshot.png") , ( (modMask, xK_c) , spawn "clipmenu")
+          , ((modMask .|. shiftMask, xK_s), spawn "maim -s ~/screenshot.png") 
+          , ((modMask, xK_c) , spawn "clipmenu")
 
     -- multi media keys
           , ((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")

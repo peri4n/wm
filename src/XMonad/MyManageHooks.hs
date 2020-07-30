@@ -7,7 +7,7 @@ import qualified XMonad.StackSet as W
 myManageHook =
   composeAll
     [ isPrefixOf "jetbrains" <$> className --> doShift "Dev"
-    , isPrefixOf "firefox" <$> className --> doShift "Web"
-    , (className =? "Slack") --> doF (W.shift "Chat")
+    , isPrefixOf "Vivaldi"   <$> className --> doShift "Web"
+    , (className =? "Slack")               --> doShift "Chat"
     ] <+>
   manageHook def

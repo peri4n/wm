@@ -3,7 +3,14 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: xmonad-spotify-0.1.2.2@sha256:6c8ca88ac8a4c996782f9f34173d12cf36d404d735e2afc1e440332245acc488,1335
+    pantry-tree:
+      size: 336
+      sha256: 5ce448296ce77c3d02e8fef995580c0bc3aa6c6f08f031a26496656dc8866d2c
+  original:
+    hackage: xmonad-spotify-0.1.2.2@sha256:6c8ca88ac8a4c996782f9f34173d12cf36d404d735e2afc1e440332245acc488,1335
 snapshots:
 - completed:
     size: 524155
