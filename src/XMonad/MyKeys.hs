@@ -18,6 +18,9 @@ import           XMonad.Prompt.Pass
 import           XMonad.Util.Run
 import           XMonad.Util.Spotify
 
+import           XMonad.Util.NamedScratchpad
+import           XMonad.MyScratchPads
+
 myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@XConfig { XMonad.modMask = modMask } =
     mediaKeys
@@ -50,12 +53,12 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
           , ((modMask, xK_l), sendMessage Expand)
           , ((modMask .|. shiftMask, xK_p), raiseMaybe (runInTerm "-t htop" "htop") (title =? "htop"))
           , ((modMask .|. shiftMask, xK_y), raiseMaybe (runInTerm "-t nnn" "nnn") (title =? "nnn"))
-          , ((modMask .|. shiftMask, xK_t), raiseMaybe (runInTerm "-t task" "tasksh") (title =? "task"))
-          , ((modMask .|. shiftMask, xK_o), raiseMaybe (runInTerm "-t mail" "alot") (title =? "mail"))
-          , ((modMask .|. shiftMask, xK_u), raiseMaybe (runInTerm "-t music" "ncmpcpp") (title =? "music"))
           , ((modMask .|. shiftMask, xK_s), spawn "maim -s ~/screenshot.png")
           , ((modMask              , xK_c), spawn "clipmenu")
 
+    -- register scratchpads
+          , ((modMask .|. shiftMask, xK_o), namedScratchpadAction myScratchPads "mail")
+          , ((modMask .|. shiftMask, xK_t), namedScratchpadAction myScratchPads "task")
     -- multi media keys
           , ((0, xF86XK_AudioMute) , spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
           , ((0, xF86XK_AudioLowerVolume) , spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")

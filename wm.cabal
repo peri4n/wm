@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: fc9715623bf497f5b97944406e6a63373c4be9d5b8cd89bcaf8b214c33a7c2cc
+-- hash: 93b7667c376b7595d690d5d7e96c0309322b0a360d7ac8d5d4efd41315ce0b48
 
 name:           wm
 version:        0.1.0.0
@@ -32,6 +32,7 @@ library
       XMonad.MyKeys
       XMonad.MyLayouts
       XMonad.MyManageHooks
+      XMonad.MyScratchPads
   other-modules:
       Paths_wm
   hs-source-dirs:
