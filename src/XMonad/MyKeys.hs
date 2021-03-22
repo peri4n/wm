@@ -71,7 +71,7 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
           , ((modMask .|. shiftMask, xK_q), io exitSuccess)
           , ((modMask, xK_q), spawn "if type xmonad; then xmonad --recompile && xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi")
     -- pass integration
-          , ((modMask, xK_y), passPrompt (def { searchPredicate = fuzzyMatch }))
+          , ((modMask, xK_y), passPrompt (def { font = "xft:terminus:size=12", searchPredicate = fuzzyMatch, fgHLight = "#ff8080" }))
           ]
         ++
     -- mod-[1..9] %! Switch to workspace N
