@@ -14,7 +14,6 @@ import           XMonad.Actions.Minimize
 import           XMonad.Actions.WindowGo
 import           XMonad.Prompt
 import           XMonad.Prompt.FuzzyMatch
-import           XMonad.Prompt.Pass
 import           XMonad.Util.Run
 import           XMonad.Util.Spotify
 
@@ -70,10 +69,6 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
     -- quit, or restart
           , ((modMask .|. shiftMask, xK_q), io exitSuccess)
           , ((modMask, xK_q), spawn "if type xmonad; then xmonad --recompile && xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi")
-    -- pass integration
-          , ((modMask, xK_y), passPrompt (def { font = "xft:terminus:size=12", searchPredicate = fuzzyMatch, fgHLight = "#ff8080" }))
-          ]
-        ++
     -- mod-[1..9] %! Switch to workspace N
     -- mod-shift-[1..9] %! Move client to workspace N
            [ ((m .|. modMask, k), windows $ f i)
