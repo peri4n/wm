@@ -11,6 +11,20 @@ packages:
       sha256: 5ce448296ce77c3d02e8fef995580c0bc3aa6c6f08f031a26496656dc8866d2c
   original:
     hackage: xmonad-spotify-0.1.2.2@sha256:6c8ca88ac8a4c996782f9f34173d12cf36d404d735e2afc1e440332245acc488,1335
+- completed:
+    hackage: xmonad-0.17.0@sha256:fc90c8fa647390c68c902912a5a7417f04025dfe72f7de51b248217f7ca0d484,5533
+    pantry-tree:
+      size: 2485
+      sha256: 6fd7c6a64621a088fcbb2e5a66030a78b0832d7341e4c465d3aeb4e668d097a5
+  original:
+    hackage: xmonad-0.17.0@sha256:fc90c8fa647390c68c902912a5a7417f04025dfe72f7de51b248217f7ca0d484,5533
+- completed:
+    hackage: xmonad-contrib-0.17.0@sha256:defd04a9ca0e031eb7280b734ccd6d6b73f757babfe4a561a7ff718e75211749,20357
+    pantry-tree:
+      size: 21783
+      sha256: 81a4589ef85fed434a852ba1324466b5ad8f4fd752cd88840aa4ea4348a16cec
+  original:
+    hackage: xmonad-contrib-0.17.0
 snapshots:
 - completed:
     size: 586296

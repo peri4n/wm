@@ -36,6 +36,9 @@ packages:
 #
 extra-deps:
 - xmonad-spotify-0.1.2.2@sha256:6c8ca88ac8a4c996782f9f34173d12cf36d404d735e2afc1e440332245acc488,1335
+- xmonad-0.17.0@sha256:fc90c8fa647390c68c902912a5a7417f04025dfe72f7de51b248217f7ca0d484,5533
+- xmonad-contrib-0.17.0
+
 # - acme-missiles-0.3
 # - git: https://github.com/commercialhaskell/stack.git
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
