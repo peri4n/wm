@@ -28,7 +28,7 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
           [ ((modMask              , xK_Return), spawn $ XMonad.terminal conf)
           , ((modMask              , xK_n), spawn "dmenu_run_history.sh")
           , ((modMask              , xK_a), spawn "select_window.sh")
-          , ((modMask .|. shiftMask, xK_f), spawn "autorandr --detected | dmenu | xargs autorandr --load")
+          , ((modMask .|. shiftMask, xK_f), spawn "autorandr --list | dmenu | xargs autorandr --load")
           , ((modMask .|. shiftMask, xK_Escape), spawn "slock")
           , ((modMask .|. shiftMask, xK_c), kill)
 
