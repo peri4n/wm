@@ -51,7 +51,7 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
           , ((modMask, xK_h), sendMessage Shrink)
           , ((modMask, xK_l), sendMessage Expand)
           , ((modMask .|. shiftMask, xK_p), raiseMaybe (runInTerm "-t htop" "htop") (title =? "htop"))
-          , ((modMask .|. shiftMask, xK_y), raiseMaybe (runInTerm "-t nnn" "nnn") (title =? "nnn"))
+          , ((modMask .|. shiftMask, xK_y), raiseMaybe (runInTerm "-t broot" "broot -s") (appName =? "broot" <||> title =? "broot"))
           , ((modMask .|. shiftMask, xK_s), spawn "maim -s ~/screenshot.png")
           , ((modMask              , xK_c), spawn "clipmenu")
 
