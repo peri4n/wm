@@ -51,12 +51,11 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
           , ((modMask, xK_h), sendMessage Shrink)
           , ((modMask, xK_l), sendMessage Expand)
           , ((modMask .|. shiftMask, xK_p), raiseMaybe (runInTerm "-t htop" "htop") (title =? "htop"))
-          , ((modMask .|. shiftMask, xK_y), raiseMaybe (runInTerm "-t broot" "broot -s") (appName =? "broot" <||> title =? "broot"))
           , ((modMask .|. shiftMask, xK_s), spawn "maim -s ~/screenshot.png")
           , ((modMask              , xK_c), spawn "clipmenu")
 
     -- register scratchpads
-          , ((modMask .|. shiftMask, xK_o), namedScratchpadAction myScratchPads "mail")
+          , ((modMask .|. shiftMask, xK_y), namedScratchpadAction myScratchPads "finder")
           , ((modMask .|. shiftMask, xK_t), namedScratchpadAction myScratchPads "task")
     -- multi media keys
           , ((0, xF86XK_AudioMute) , spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")

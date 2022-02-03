@@ -6,13 +6,13 @@ import           XMonad.Util.NamedScratchpad
 
 myScratchPads :: [NamedScratchpad]
 myScratchPads =
-    [ NS "mail" spawnMail findMail manageMail
+    [ NS "finder" spawnFinder findFinder manageFinder
     , NS "task" spawnTask findTask manageTask
     ]
   where
-    spawnMail  = "st -e alot"
-    findMail   = title =? "alot"
-    manageMail = customFloating $ W.RationalRect l t w h
+    spawnFinder  = "st -t broot -e broot -s"
+    findFinder   = appName =? "broot" <||> title =? "broot"
+    manageFinder = customFloating $ W.RationalRect l t w h
       where
         h = 0.9
         w = 0.9
