@@ -10,7 +10,7 @@ myScratchPads =
     , NS "task" spawnTask findTask manageTask
     ]
   where
-    spawnFinder  = "st -t broot -e broot -s"
+    spawnFinder  = "kitty -T broot broot"
     findFinder   = appName =? "broot" <||> title =? "broot"
     manageFinder = customFloating $ W.RationalRect l t w h
       where
@@ -19,7 +19,7 @@ myScratchPads =
         t = 0.95 - h
         l = 0.95 - w
 
-    spawnTask = "st -e tasksh"
+    spawnTask = "kitty -T tasksh tasksh"
     findTask  = title =? "tasksh"
     manageTask = customFloating $ W.RationalRect l t w h
       where

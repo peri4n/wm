@@ -50,7 +50,7 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
     -- resizing the master/slave ratio
           , ((modMask, xK_h), sendMessage Shrink)
           , ((modMask, xK_l), sendMessage Expand)
-          , ((modMask .|. shiftMask, xK_p), raiseMaybe (runInTerm "-t htop" "htop") (title =? "htop"))
+          , ((modMask .|. shiftMask, xK_p), raiseMaybe (runInTerm "-t btop" "btop") (title =? "btop"))
           , ((modMask .|. shiftMask, xK_s), spawn "maim -s ~/screenshot.png")
           , ((modMask              , xK_c), spawn "clipmenu")
 
