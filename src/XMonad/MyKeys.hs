@@ -12,6 +12,7 @@ import           System.Exit
 import           XMonad
 import           XMonad.Actions.Minimize
 import           XMonad.Actions.WindowGo
+import           XMonad.Actions.WindowBringer
 import           XMonad.Prompt
 import           XMonad.Prompt.FuzzyMatch
 import           XMonad.Util.Run
@@ -27,10 +28,13 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
     -- launching and killing programs
           [ ((modMask              , xK_Return), spawn $ XMonad.terminal conf)
           , ((modMask              , xK_n), spawn "dmenu_run_history.sh")
-          , ((modMask              , xK_a), spawn "select_window.sh")
           , ((modMask .|. shiftMask, xK_f), spawn "autorandr --list | dmenu | xargs autorandr --load")
           , ((modMask .|. shiftMask, xK_Escape), spawn "slock")
           , ((modMask .|. shiftMask, xK_c), kill)
+          
+    -- window switcher
+          , ((modMask .|. shiftMask, xK_g), gotoMenu)
+          , ((modMask .|. shiftMask, xK_b), bringMenu)
 
     -- switch layouts
           , ((modMask              , xK_space), sendMessage NextLayout)
