@@ -67,7 +67,7 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
 
     -- quit, or restart
           , ((modMask .|. shiftMask, xK_q), io exitSuccess)
-          , ((modMask, xK_q), spawn "if type xmonad; then xmonad --recompile && xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi")
+          , ((modMask, xK_q), spawn "if type wm-exe; then wm-exe --recompile && wm-exe --restart; else xmessage wm-exe not in \\$PATH: \"$PATH\"; fi")
           ] ++
     -- mod-[1..9] %! Switch to workspace N
     -- mod-shift-[1..9] %! Move client to workspace N

@@ -2,7 +2,7 @@
 
 set -e
 
-stack build --verbosity error
+stack build :wm-exe
 stack install wm:exe:wm-exe --local-bin-path bin/ --verbosity error
 mv bin/wm-exe "$1"
 
