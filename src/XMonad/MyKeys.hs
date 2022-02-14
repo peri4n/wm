@@ -21,6 +21,9 @@ import           XMonad.Util.Spotify
 import           XMonad.Util.NamedScratchpad
 import           XMonad.MyScratchPads
 
+bringerConfig :: WindowBringerConfig
+bringerConfig = def { menuArgs = ["-i", "-l", "10"] }
+
 myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@XConfig { XMonad.modMask = modMask } =
     mediaKeys
@@ -33,8 +36,8 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
           , ((modMask .|. shiftMask, xK_c), kill)
           
     -- window switcher
-          , ((modMask .|. shiftMask, xK_g), gotoMenu)
-          , ((modMask .|. shiftMask, xK_b), bringMenu)
+          , ((modMask .|. shiftMask, xK_g), gotoMenuConfig bringerConfig)
+          , ((modMask .|. shiftMask, xK_b), bringMenuConfig bringerConfig)
 
     -- switch layouts
           , ((modMask              , xK_space), sendMessage NextLayout)
@@ -54,7 +57,7 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
     -- resizing the master/slave ratio
           , ((modMask, xK_h), sendMessage Shrink)
           , ((modMask, xK_l), sendMessage Expand)
-          , ((modMask .|. shiftMask, xK_p), raiseMaybe (runInTerm "-t btop" "btop") (title =? "btop"))
+          , ((modMask .|. shiftMask, xK_p), raiseMaybe (runInTerm "-T btop" "btop") (title =? "btop"))
           , ((modMask .|. shiftMask, xK_s), spawn "maim -s ~/screenshot.png")
           , ((modMask              , xK_c), spawn "clipmenu")
 

@@ -4,10 +4,10 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 8ab09295f690afcf8c40ee2bf8a8048f53f54c45262c6afec3ac0ed946fbcdfb
+-- hash: 7b9d91b38477cbe383bc12b2368fb86926e0fce4be85e069d32c7d81fc52e439
 
 name:           wm
-version:        0.1.0.3
+version:        0.1.0.5
 description:    Please see the README on GitHub at <https://github.com/peri4n/wm#readme>
 homepage:       https://github.com/peri4n/wm#readme
 bug-reports:    https://github.com/peri4n/wm/issues
