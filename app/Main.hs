@@ -1,38 +1,46 @@
-import           XMonad
-import           XMonad.Hooks.DynamicLog   (statusBar)
-import           XMonad.Hooks.EwmhDesktops (ewmh)
-import           XMonad.Hooks.ManageDocks  (avoidStruts)
-import           XMonad.Hooks.SetWMName
-import           XMonad.Hooks.UrgencyHook
+{-# LANGUAGE TupleSections #-}
 
+import XMonad
+import XMonad.Hooks.DynamicLog (statusBar)
+import XMonad.Hooks.EwmhDesktops (ewmh)
+import XMonad.Hooks.ManageDocks (avoidStruts)
+import XMonad.Hooks.SetWMName
+import XMonad.Hooks.UrgencyHook
+import XMonad.Hooks.WallpaperSetter
 -- Custom modules
-import           XMonad.MyDocks
-import           XMonad.MyEventHooks
-import           XMonad.MyKeys
-import           XMonad.MyLayouts
-import           XMonad.MyManageHooks
+import XMonad.MyDocks
+import XMonad.MyEventHooks
+import XMonad.MyKeys
+import XMonad.MyLayouts
+import XMonad.MyManageHooks
 
 main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
 
--- Config augmented with Ewmh (used by rofi) and urgency hooks
 myConfig =
   ewmh
-    (withUrgencyHook NoUrgencyHook $
-     def
-       { modMask = mod4Mask
-       , startupHook = setWMName "LG3D"
-       , borderWidth = 1
-       , terminal = "kitty"
-       , normalBorderColor = "darkgrey"
-       , focusedBorderColor = "white"
-       , keys = myKeys
-       , focusFollowsMouse = myFocusFollowsMouse
-       , clickJustFocuses = myClickJustFocuses
-       , workspaces = myWorkspaces
-       , handleEventHook = myEventHooks
-       , manageHook = myManageHook <+> manageHook def
-       , layoutHook = avoidStruts myLayout
-       })
+    ( withUrgencyHook NoUrgencyHook $
+        def
+          { modMask = mod4Mask,
+            startupHook = setWMName "LG3D",
+            borderWidth = 1,
+            terminal = "kitty",
+            normalBorderColor = "darkgrey",
+            focusedBorderColor = "white",
+            keys = myKeys,
+            focusFollowsMouse = myFocusFollowsMouse,
+            clickJustFocuses = myClickJustFocuses,
+            workspaces = myWorkspaces,
+            handleEventHook = myEventHooks,
+            manageHook = myManageHook <+> manageHook def,
+            layoutHook = avoidStruts myLayout,
+            logHook =
+              wallpaperSetter
+                WallpaperConf
+                  { wallpaperBaseDir = "", -- defaults to "~/.wallpapers"
+                    wallpapers = WallpaperList $ map (,WallpaperFix "haskell-lambda.jpg") myWorkspaces
+                  }
+          }
+    )
 
 -- Key binding to toggle the gap for the bar.
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
