@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 072e311e179f2326e06181613d66afebe7953ad10c952a11b78b3c0760ba74e6
+-- hash: 4ebda61c8db506efcbabd2047131fc5445455caa2860cc608f5309330178870e
 
 name:           wm
 version:        0.1.0.6
@@ -41,6 +41,7 @@ library
       X11
     , base >=4.7 && <5
     , containers
+    , time
     , xmonad >=0.15
     , xmonad-contrib >=0.15
     , xmonad-spotify
@@ -57,6 +58,7 @@ executable wm-exe
       X11
     , base >=4.7 && <5
     , containers
+    , time
     , wm
     , xmonad >=0.15
     , xmonad-contrib >=0.15
@@ -75,6 +77,7 @@ test-suite wm-test
       X11
     , base >=4.7 && <5
     , containers
+    , time
     , wm
     , xmonad >=0.15
     , xmonad-contrib >=0.15

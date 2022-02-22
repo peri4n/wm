@@ -26,6 +26,7 @@ dependencies:
 - xmonad-spotify
 - containers
 - X11
+- time
 
 library:
   source-dirs: src

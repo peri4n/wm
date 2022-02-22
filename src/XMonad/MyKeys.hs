@@ -1,6 +1,7 @@
 module XMonad.MyKeys where
 
 import           Data.Map                      as M
+import           Data.Time
 
 import qualified XMonad.StackSet               as W
 import qualified XMonad.Layout.BoringWindows   as B
@@ -34,7 +35,7 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
           , ((modMask .|. shiftMask, xK_f), spawn "autorandr --list | dmenu | xargs autorandr --load")
           , ((modMask .|. shiftMask, xK_Escape), spawn "slock")
           , ((modMask .|. shiftMask, xK_c), kill)
-          
+
     -- window switcher
           , ((modMask .|. shiftMask, xK_g), gotoMenuConfig bringerConfig)
           , ((modMask .|. shiftMask, xK_b), bringMenuConfig bringerConfig)
@@ -58,7 +59,7 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
           , ((modMask, xK_h), sendMessage Shrink)
           , ((modMask, xK_l), sendMessage Expand)
           , ((modMask .|. shiftMask, xK_p), raiseMaybe (runInTerm "-T btop" "btop") (title =? "btop"))
-          , ((modMask .|. shiftMask, xK_s), spawn "maim -s ~/screenshot.png")
+          , ((modMask .|. shiftMask, xK_s), screenshot)
           , ((modMask              , xK_c), spawn "clipmenu")
 
     -- register scratchpads
@@ -82,3 +83,9 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
            | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
            , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
            ]
+
+screenshot :: X ()
+screenshot = do
+  time <- io getCurrentTime
+  spawn $ "maim -s ~/screenshot_" ++ show time ++ ".png"
+
