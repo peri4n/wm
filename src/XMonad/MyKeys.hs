@@ -63,7 +63,7 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
           , ((modMask              , xK_c), spawn "clipmenu")
 
     -- register scratchpads
-          , ((modMask .|. shiftMask, xK_y), namedScratchpadAction myScratchPads "finder")
+          , ((modMask, xK_o), namedScratchpadAction myScratchPads "finder")
           , ((modMask .|. shiftMask, xK_t), namedScratchpadAction myScratchPads "task")
     -- multi media keys
           , ((0, xF86XK_AudioMute) , spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
