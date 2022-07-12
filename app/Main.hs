@@ -3,18 +3,17 @@
 import XMonad
 import XMonad.Hooks.DynamicLog (statusBar)
 import XMonad.Hooks.EwmhDesktops (ewmh)
-import XMonad.Hooks.ManageDocks (avoidStruts)
+import XMonad.Hooks.ManageDocks (avoidStruts, docks)
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.WallpaperSetter
--- Custom modules
 import XMonad.MyDocks
 import XMonad.MyEventHooks
 import XMonad.MyKeys
 import XMonad.MyLayouts
 import XMonad.MyManageHooks
 
-main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
+main = xmonad =<< (docks <$> statusBar myBar myPP toggleStrutsKey myConfig)
 
 myConfig =
   ewmh

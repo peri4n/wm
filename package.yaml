@@ -1,5 +1,5 @@
 name:                wm
-version:             0.1.0.6
+version:             0.1.0.7
 github:              "peri4n/wm"
 license:             BSD3
 author:              "Fabian Bull"
@@ -21,8 +21,8 @@ description:         Please see the README on GitHub at <https://github.com/peri
 
 dependencies:
 - base >= 4.7 && < 5
-- xmonad >= 0.15
-- xmonad-contrib >= 0.15
+- xmonad >= 0.17
+- xmonad-contrib >= 0.17
 - xmonad-spotify
 - containers
 - X11

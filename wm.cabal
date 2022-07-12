@@ -4,10 +4,10 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4ebda61c8db506efcbabd2047131fc5445455caa2860cc608f5309330178870e
+-- hash: 9495c6ef090d68843313b2f744b0f153bb6d893dde9c86c0d19dee31234180b9
 
 name:           wm
-version:        0.1.0.6
+version:        0.1.0.7
 description:    Please see the README on GitHub at <https://github.com/peri4n/wm#readme>
 homepage:       https://github.com/peri4n/wm#readme
 bug-reports:    https://github.com/peri4n/wm/issues
@@ -42,8 +42,8 @@ library
     , base >=4.7 && <5
     , containers
     , time
-    , xmonad >=0.15
-    , xmonad-contrib >=0.15
+    , xmonad >=0.17
+    , xmonad-contrib >=0.17
     , xmonad-spotify
   default-language: Haskell2010
 
@@ -60,8 +60,8 @@ executable wm-exe
     , containers
     , time
     , wm
-    , xmonad >=0.15
-    , xmonad-contrib >=0.15
+    , xmonad >=0.17
+    , xmonad-contrib >=0.17
     , xmonad-spotify
   default-language: Haskell2010
 
@@ -79,7 +79,7 @@ test-suite wm-test
     , containers
     , time
     , wm
-    , xmonad >=0.15
-    , xmonad-contrib >=0.15
+    , xmonad >=0.17
+    , xmonad-contrib >=0.17
     , xmonad-spotify
   default-language: Haskell2010

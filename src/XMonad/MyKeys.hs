@@ -32,13 +32,13 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
     -- launching and killing programs
           [ ((modMask              , xK_Return), spawn $ XMonad.terminal conf)
           , ((modMask              , xK_n), spawn "dmenu_run_history.sh")
-          , ((modMask .|. shiftMask, xK_f), spawn "autorandr --list | dmenu | xargs autorandr --load")
+          , ((modMask              , xK_f), spawn "autorandr --list | dmenu | xargs autorandr --load")
           , ((modMask .|. shiftMask, xK_Escape), spawn "slock")
           , ((modMask .|. shiftMask, xK_c), kill)
 
     -- window switcher
-          , ((modMask .|. shiftMask, xK_g), gotoMenuConfig bringerConfig)
-          , ((modMask .|. shiftMask, xK_b), bringMenuConfig bringerConfig)
+          , ((modMask              , xK_e), bringMenuConfig bringerConfig)
+          , ((modMask .|. shiftMask, xK_e), gotoMenuConfig bringerConfig)
 
     -- switch layouts
           , ((modMask              , xK_space), sendMessage NextLayout)

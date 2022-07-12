@@ -3,7 +3,7 @@
 }:
 mkDerivation {
   pname = "wm";
-  version = "0.1.0.1";
+  version = "0.1.0.7";
   src = ./.;
   isLibrary = true;
   isExecutable = true;
